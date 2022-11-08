@@ -1,8 +1,8 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS books
-DROP TABLE IF EXISTS authors
-DROP TABLE IF EXISTS books_authors
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS books_authors;
 
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -10,20 +10,20 @@ CREATE TABLE books (
     released INT NOT NULL
 );
 
-CREATE TABLE authors {
+CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR NOT NULL,
     date_of_birth VARCHAR,
     place_of_birth VARCHAR
-}
+);
 
-CREATE TABLE books_authors {
+CREATE TABLE books_authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     author_id BIGINT,
     book_id BIGINT,
     FOREIGN KEY (author_id) REFERENCES authors(id),
     FOREIGN KEY (book_id) REFERENCES books(id)
-}
+);
 
 INSERT INTO books (
     title,
@@ -47,11 +47,10 @@ VALUES
 ('Mistborn', 2006),
 ('Warbreaker', 2009),
 ('The Eye of the World', 1990),
-('The Gathering Storm', 2009),
 ('A Game of Thrones', 1996),
 ('Red Rising', 2014),
 ('Golden Son', 2015),
-('Morning Star', 2016)
+('Morning Star', 2016);
 
 INSERT INTO authors (
     name,
@@ -69,11 +68,38 @@ VALUES
 ('George R. R. Martin', 'September 20, 1948', 'Bayonne, NJ'),
 ('Brandon Sanderson', 'December 19, 1975', 'Lincoln, NE'),
 ('Robert Jordan', 'October 17, 1948', 'Charleston, SC'),
-('Pierce Brown', 'January 28, 1988', 'Denver, CO')
+('Pierce Brown', 'January 28, 1988', 'Denver, CO');
 
--- INSERT INTO books_authors (
---     auther_id,
---     book_id
--- )
--- VALUES
--- ()
+INSERT INTO books_authors (
+    author_id,
+    book_id
+)
+
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(3, 3),
+(3, 4),
+(4, 1),
+(4, 5),
+(4, 6),
+(5, 1),
+(5, 7),
+(5, 8),
+(5, 9),
+(6, 1),
+(6, 10),
+(7, 1),
+(7, 17),
+(8, 11),
+(8, 12),
+(8, 13),
+(8, 14),
+(8, 15),
+(8, 2),
+(9, 2),
+(9, 16),
+(10, 18),
+(10, 19),
+(10, 20);
