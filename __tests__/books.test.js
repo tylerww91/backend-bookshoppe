@@ -29,7 +29,7 @@ describe('books routes', () => {
       authors: [
         {
           id: expect.any(String),
-          name: expect.any(Array),
+          name: expect.any(String),
         },
       ],
     });
