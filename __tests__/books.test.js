@@ -13,9 +13,9 @@ describe('books routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.length).toBe(20);
     expect(resp.body[0]).toEqual({
-      id: expect.any(Number),
+      id: expect.any(String),
       title: expect.any(String),
-      released: expect.any(String),
+      released: expect.any(Number),
     });
   });
   afterAll(() => {
