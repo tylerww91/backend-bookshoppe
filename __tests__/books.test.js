@@ -25,12 +25,7 @@ describe('books routes', () => {
     expect(resp.body).toEqual({
       title: expect.any(String),
       released: expect.any(Number),
-      authors: [
-        {
-          id: expect.any(Number),
-          name: expect.any(String),
-        },
-      ],
+      authors: expect.any(Array),
     });
   });
   afterAll(() => {
