@@ -26,13 +26,7 @@ describe('authors routes', () => {
       name: expect.any(String),
       date_of_birth: expect.any(String),
       place_of_birth: expect.any(String),
-      books: [
-        {
-          id: expect.any(Number),
-          title: expect.any(String),
-          released: expect.any(Number),
-        },
-      ],
+      books: expect.any(Array),
     });
   });
   afterAll(() => {
